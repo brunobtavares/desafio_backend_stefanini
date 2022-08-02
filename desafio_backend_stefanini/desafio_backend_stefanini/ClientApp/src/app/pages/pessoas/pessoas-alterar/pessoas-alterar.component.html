@@ -1,0 +1,28 @@
+<h2>Alterar Pessoa</h2>
+
+<form (ngSubmit)="submit()" [formGroup]="pessoaForm" #form="ngForm">
+  <div class="mb-2">
+    <label>Nome</label>
+    <input type="text" class="form-control" formControlName="nome">
+    <small class="text-danger" *ngIf="pessoaForm.get('nome')?.invalid && form.submitted">Campo Obrigatório</small>
+  </div>
+  <div class="mb-2">
+    <label>CPF</label>
+    <input type="text" class="form-control" formControlName="cpf" mask="000.000.000-00">
+    <small class="text-danger" *ngIf="pessoaForm.get('cpf')?.invalid && form.submitted">Campo Obrigatório</small>
+  </div>
+  <div>
+    <label>Cidade</label>
+    <select class="form-select" formControlName="cidadeId">
+      <ng-container *ngFor="let c of cidades">
+        <option [value]="c.id">{{ c.nome }}</option>
+      </ng-container>
+    </select>
+    <small class="text-danger" *ngIf="pessoaForm.get('cidadeId')?.invalid && form.submitted">Campo Obrigatório</small>
+  </div>
+
+  <div class="d-flex justify-content-end mt-2">
+    <button type="reset" class="btn btn-danger btn-sm" [routerLink]="['/pessoas/listar']">Cancelar</button>
+    <button type="submit" class="btn btn-success btn-sm ms-2">Salvar</button>
+  </div>
+</form>
