@@ -40,7 +40,7 @@ namespace desafio_backend_stefanini.API.Services
         {
             return await _pessoaRepository.GetAllWithCitiesAsync();
         }
-        
+
         public async Task<IEnumerable<Pessoa>> GetAllAsync()
         {
             return await _pessoaRepository.GetAllAsync();

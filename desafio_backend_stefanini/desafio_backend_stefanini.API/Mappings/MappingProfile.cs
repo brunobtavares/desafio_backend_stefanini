@@ -12,8 +12,8 @@ namespace desafio_backend_stefanini.API.DTOs.Mappings
             CreateMap<AlterarPessoaDTO, Pessoa>();
 
             CreateMap<IncluirCidadeDTO, Cidade>();
-            CreateMap<AlterarCidadeDTO, Cidade>();     
-            
+            CreateMap<AlterarCidadeDTO, Cidade>();
+
             CreateMap<PessoaDTO, Pessoa>();
             CreateMap<CidadeDTO, Cidade>();
         }
