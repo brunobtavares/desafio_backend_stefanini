@@ -1,10 +1,14 @@
-using desafio_backend_stefanini.Application;
+using desafio_backend_stefanini.Application.Clients;
+using desafio_backend_stefanini.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddScoped<IPessoaClient>(provider => new PessoaClient(builder.Configuration.GetValue<string>("ApiUrl")));
+builder.Services.AddScoped<ICidadeClient>(provider => new CidadeClient(builder.Configuration.GetValue<string>("ApiUrl")));
 
 var app = builder.Build();
 

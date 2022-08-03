@@ -13,26 +13,26 @@ export class PessoaService {
   ) { }
 
   getAllWithCitiesAsync() {
-    return this._httpClient.get<Pessoa[]>(`${apiUrl}/pessoa/getAllWithCities`).toPromise();
+    return this._httpClient.get<Pessoa[]>(`${apiUrl}api/pessoa/getallwithcities`).toPromise();    
   }
 
   getAllAsync() {
-    return this._httpClient.get<Pessoa[]>(`${apiUrl}/pessoa/getAll`).toPromise();
+    return this._httpClient.get<Pessoa[]>(`${apiUrl}api/pessoa/getall`).toPromise();
   }
 
   getByIdAsync(id: string) {
-    return this._httpClient.get<Pessoa>(`${apiUrl}/pessoa/${id}`).toPromise();
+    return this._httpClient.get<Pessoa>(`${apiUrl}api/pessoa/${id}`).toPromise();
   }
 
   incluirAsync(pessoa: PessoaIncluir) {
-    return this._httpClient.post<Pessoa>(`${apiUrl}/pessoa/incluir`, pessoa).toPromise();
+    return this._httpClient.post<Pessoa>(`${apiUrl}api/pessoa/incluir`, pessoa).toPromise();
   }
 
   alterarAsync(pessoa: PessoaAlterar) {
-    return this._httpClient.put<Pessoa>(`${apiUrl}/pessoa/alterar`, pessoa).toPromise();
+    return this._httpClient.put<Pessoa>(`${apiUrl}api/pessoa/alterar`, pessoa).toPromise();
   }
 
   removerAsync(id: string) {
-    return this._httpClient.delete<Pessoa>(`${apiUrl}/pessoa/${id}`).toPromise();
+    return this._httpClient.delete<Pessoa>(`${apiUrl}api/pessoa/${id}`).toPromise();
   }
 }

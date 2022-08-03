@@ -19,4 +19,4 @@ if (environment.production) {
 platformBrowserDynamic(providers).bootstrapModule(AppModule)
   .catch(err => console.log(err));
 
-export const apiUrl = "https://localhost:7243";
+export const apiUrl = getBaseUrl(); //"https://localhost:7243";
